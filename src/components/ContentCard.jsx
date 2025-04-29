@@ -2,30 +2,11 @@ import React from "react";
 
 export default function ContentCard({ data }) {
   return (
-    <div className="px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="border rounded-lg shadow-lg p-4 transition transform hover:scale-105 flex items-center space-x-4 bg-gray-200 bg-opacity-30 backdrop-blur-md"
-          >
-            {/* Icon */}
-            <div className="flex-shrink-0">
-              <img
-                src={item.icon}
-                alt={`${item.title} icon`}
-                className="w-16 h-16"
-              />
-            </div>
-
-            {/* Text Content */}
-            <div className="flex-grow">
-              <h3 className="text-2xl font-bold mb-2 text-[#2F4F4F]">{item.title}</h3>
-              <p className="text-lg text-[#2F4F4F]">{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="border rounded-lg shadow-lg p-6 sm:p-4 bg-gray-200 bg-opacity-30 backdrop-blur-md flex-grow 
+    flex flex-col items-center justify-center transition duration-200 hover:scale-105">
+      <img src={data.icon} alt={`${data.title} icon`} className="w-24 h-24 sm:w-16 sm:h-16 mb-4" />
+      <h3 className="text-2xl sm:text-xl font-bold text-[#2F4F4F]">{data.title}</h3>
+      <p className="text-lg sm:text-sm text-[#2F4F4F]">{data.description}</p>
     </div>
   );
 }
